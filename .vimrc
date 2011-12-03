@@ -13,7 +13,9 @@ let mapleader = ","
 syntax on
 
 colorscheme molokai
-let g:molokai_original = 1
+let g:molokai_original = 0
 map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
+
+autocmd BufNewFile,BufRead *.json set ft=javascript
 
 map <F2> :NERDTreeToggle<CR>
