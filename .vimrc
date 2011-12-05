@@ -12,8 +12,7 @@ let mapleader = ","
 :set ruler
 syntax on
 
-colorscheme molokai
-let g:molokai_original = 0
+colorscheme desert
 
 "reformat a json file prettily using ,jt
 map <leader>jt  <Esc>:%!json_xs -f json -t json-pretty<CR>
