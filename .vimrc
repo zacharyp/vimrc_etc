@@ -35,3 +35,8 @@ autocmd BufNewFile,BufRead *.json set ft=javascript
 "map F2 key to toggle NerdTree on and off
 map <F2> :NERDTreeToggle<CR>
 map <F3> :NERDTreeFind<CR>
+
+
+"tab completion
+au FileType python set omnifunc=pythoncomplete#Complete
+let g:SuperTabDefaultCompletionType = "context"
