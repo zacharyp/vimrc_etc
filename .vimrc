@@ -22,7 +22,7 @@ filetype plugin on     " enables filetype specific plugins
 filetype plugin indent on     " enables filetype plugins indent
 
 syntax on
-colorscheme desert
+colorscheme solarized
 
 "reformat a json file prettily using ,jt
 map <leader>jt <Esc>:%!json_xs -f json -t json-pretty<CR>
