@@ -33,8 +33,9 @@ map <leader>jt <Esc>:%!json_xs -f json -t json-pretty<CR>
 autocmd BufNewFile,BufRead *.json set ft=javascript
 
 "map F2 key to toggle NerdTree on and off
-map <F2> :NERDTreeToggle<CR>
-map <F3> :NERDTreeFind<CR>
+"map <F2> :NERDTreeToggle<CR>
+map <leader>t :NERDTreeToggle<CR>
+map <leader>f :NERDTreeFind<CR>
 
 
 "tab completion
