@@ -22,6 +22,8 @@ filetype plugin on     " enables filetype specific plugins
 filetype plugin indent on     " enables filetype plugins indent
 
 syntax on
+set background=dark
+let g:solarized_termcolors=256
 colorscheme solarized
 
 "reformat a json file prettily using ,jt
