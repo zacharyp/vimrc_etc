@@ -10,11 +10,18 @@ let mapleader = ","
 :set ai
 :set title
 :set ruler
-syntax on
+
+call pathogen#infect()
+
+filetype off
+call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 
 filetype on            " enables filetype detection
 filetype plugin on     " enables filetype specific plugins
+filetype plugin indent on     " enables filetype plugins indent
 
+syntax on
 colorscheme desert
 
 "reformat a json file prettily using ,jt
