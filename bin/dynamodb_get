@@ -1,0 +1,11 @@
+#!/bin/bash
+
+TABLE="$1"
+NAME="$2"
+
+cat > /tmp/key.json << EOL
+{"id": {"S": "$NAME"}}
+EOL
+
+aws dynamodb get-item --table-name $TABLE --key=file:///tmp/key.json | jq 'decode_ddb' > $NAME.json
+
