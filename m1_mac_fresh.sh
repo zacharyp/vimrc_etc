@@ -1,8 +1,13 @@
 ## change shell to /bin/bash
 chsh -s /bin/bash
 
+## prompt
+echo '## prompt' >> ~/.bash_profile
+echo 'export PS1="ℤ \W \$ "' >> ~/.bash_profile
+
 ## install brew (also installs MacOS command line tools as a side effect)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo '## brew' >> ~/.bash_profile
 echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.bash_profile
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -12,6 +17,7 @@ brew install oath-toolkit
 ## python/pyenv setup:
 brew install openssl readline sqlite3 xz zlib
 brew install pyenv
+echo '## pyenv' >> ~/.bash_profile
 echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
 eval "$(pyenv init -)"
 pyenv install 3.9.13
@@ -20,6 +26,7 @@ pyenv global 3.9.13
 ## java
 brew install jenv
 eval "$(jenv init -)"
+echo '## jenv' >> ~/.bash_profile
 echo 'eval "$(jenv init -)"' >> ~/.bash_profile
 echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
 curl https://cdn.azul.com/zulu/bin/zulu17.34.19-ca-jdk17.0.3-macosx_aarch64.tar.gz > tempjdk.tar.gz
