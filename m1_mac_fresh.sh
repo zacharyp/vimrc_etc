@@ -36,8 +36,8 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 ## install node (builds directly, so takes a while)
-nvm install v15.14.0
-nvm use v15.14.0
+nvm install v16.15.1
+nvm use v16.15.1
 
 ## Heroku
 brew tap heroku/brew && brew install heroku
