@@ -14,8 +14,8 @@ brew install openssl readline sqlite3 xz zlib
 brew install pyenv
 echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
 eval "$(pyenv init -)"
-pyenv install 3.9.4
-pyenv global 3.9.4
+pyenv install 3.9.13
+pyenv global 3.9.13
 
 ## java
 brew install jenv
