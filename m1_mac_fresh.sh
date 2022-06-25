@@ -22,13 +22,13 @@ brew install jenv
 eval "$(jenv init -)"
 echo 'eval "$(jenv init -)"' >> ~/.bash_profile
 echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
-curl https://cdn.azul.com/zulu/bin/zulu11.48.21-ca-jdk11.0.11-macosx_aarch64.tar.gz > tempjdk.tar.gz
+curl https://cdn.azul.com/zulu/bin/zulu17.34.19-ca-jdk17.0.3-macosx_aarch64.tar.gz > tempjdk.tar.gz
 tar -xvvf tempjdk.tar.gz
-sudo mv zulu11.48.21-ca-jdk11.0.11-macosx_aarch64/zulu-11.jdk /Library/Java/JavaVirtualMachines/
+sudo mv zulu17.34.19-ca-jdk17.0.3-macosx_aarch64/zulu-17.jdk /Library/Java/JavaVirtualMachines/
 rm tempjdk.tar.gz
-rm -r zulu11.48.21-ca-jdk11.0.11-macosx_aarch64
-jenv add /Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home
-jenv global zulu64-11.0.11
+rm -r zulu17.34.19-ca-jdk17.0.3-macosx_aarch64
+jenv add /Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+jenv global zulu64-17.0.3
 
 ## install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
