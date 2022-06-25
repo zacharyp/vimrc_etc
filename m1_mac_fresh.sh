@@ -37,6 +37,9 @@ rm -r zulu17.34.19-ca-jdk17.0.3-macosx_aarch64
 jenv add /Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 jenv global zulu64-17.0.3
 
+## scala
+curl -fL https://github.com/coursier/launchers/raw/master/cs-x86_64-apple-darwin.gz | gzip -d > cs && chmod +x cs && (xattr -d com.apple.quarantine cs || true) && ./cs setup
+
 ## install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
