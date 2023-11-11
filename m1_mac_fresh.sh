@@ -20,8 +20,8 @@ brew install pyenv
 echo '## pyenv' >> ~/.bash_profile
 echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
 eval "$(pyenv init -)"
-pyenv install 3.9.13
-pyenv global 3.9.13
+pyenv install 3.11.6
+pyenv global 3.11.6
 
 ## java
 brew install jenv
@@ -29,25 +29,25 @@ eval "$(jenv init -)"
 echo '## jenv' >> ~/.bash_profile
 echo 'eval "$(jenv init -)"' >> ~/.bash_profile
 echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
-curl https://cdn.azul.com/zulu/bin/zulu17.34.19-ca-jdk17.0.3-macosx_aarch64.tar.gz > tempjdk.tar.gz
-tar -xvvf tempjdk.tar.gz
-sudo mv zulu17.34.19-ca-jdk17.0.3-macosx_aarch64/zulu-17.jdk /Library/Java/JavaVirtualMachines/
-rm tempjdk.tar.gz
-rm -r zulu17.34.19-ca-jdk17.0.3-macosx_aarch64
-jenv add /Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
-jenv global zulu64-17.0.3
+# go to https://adoptium.net/download/ and download
+tar -xvvf OpenJDK17U-jdk_aarch64_mac_hotspot_17.0.9_9.tar.gz
+sudo mv jdk-17.0.9+9 /Library/Java/JavaVirtualMachines/
+rm OpenJDK17U-jdk_aarch64_mac_hotspot_17.0.9_9.tar.gz
+jenv add /Library/Java/JavaVirtualMachines/jdk-17.0.9+9/Contents/Home
+jenv global 17.0.9
 
 ## scala
-curl -fL https://github.com/coursier/launchers/raw/master/cs-x86_64-apple-darwin.gz | gzip -d > cs && chmod +x cs && (xattr -d com.apple.quarantine cs || true) && ./cs setup
+curl -fL https://github.com/VirtusLab/coursier-m1/releases/latest/download/cs-aarch64-apple-darwin.gz | gzip -d > cs && chmod +x cs && (xattr -d com.apple.quarantine cs || true) && ./cs setup
 
 ## install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 ## install node (builds directly, so takes a while)
-nvm install v16.15.1
-nvm use v16.15.1
+nvm install v20.9.0
+nvm use v20.9.0
 
-## Heroku
-brew tap heroku/brew && brew install heroku
+
+## rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
