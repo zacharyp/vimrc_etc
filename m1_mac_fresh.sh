@@ -17,9 +17,12 @@ brew install oath-toolkit
 ## python/pyenv setup:
 brew install openssl readline sqlite3 xz zlib
 brew install pyenv
+brew install pyenv-virtualenv
 echo '## pyenv' >> ~/.bash_profile
 echo 'eval "$(pyenv init -)"' >> ~/.bash_profile
 eval "$(pyenv init -)"
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bash_profile
+eval "$(pyenv virtualenv-init -)"
 pyenv install 3.11.6
 pyenv global 3.11.6
 
